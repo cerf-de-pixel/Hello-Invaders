@@ -10,6 +10,7 @@
 **       licence   :    open source         **
 **                                          **
 **********************************************/
+
 #include "stdafx.h"
 #include <iostream>
 #include <stdio.h>
@@ -44,7 +45,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	game();
 }
 
-/***************************************
+/**************************************
 *  modifier l'emplacement du curseur  *
 ***************************************/
 void GotoXY(int x, int y)
@@ -53,7 +54,7 @@ void GotoXY(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), dwCursorPosition);
 }
 
-/***************************************
+/**************************************
 *    efface le texte de la console    *
 ***************************************/
 void ClearScreen(void)
@@ -71,7 +72,7 @@ void ClearScreen(void)
 	}
 }
 
-/***************************************
+/**************************************
 *         Affiche le menu             *
 ***************************************
 *    - Renvoi vers 'ecran_help'       *
@@ -87,10 +88,14 @@ void menue()
 	cout << "              |_____________________________________________|             " << endl;
 	cout << endl << endl;
 	color(10);
-	cout << "                           Faites votre choix                           " << endl;
+	cout << "                           Faites votre choix                             " << endl;
 	cout << "                                                                          " << endl;
 	cout << "                   ,---------------------------------,                    " << endl;
-	cout << "                   |         "; color(11); cout << "    JOUER !    "; color(10); cout << "         |                    " << endl;
+	cout << "                   |         "; 
+	color(11); 
+	cout << "    JOUER !    "; 
+	color(10); 
+	cout << "         |                    " << endl;
 	cout << "                   '---------------------------------'                    " << endl;
 	cout << endl;
 	cout << "                   ,---------------------------------,                    " << endl;
@@ -110,7 +115,7 @@ void menue()
 
 		if (fleche == 0){ fleche = 2; }
 		if (fleche == 3){ fleche = 1; }
-		/// la nouvelle valeur de la fleche a été donné
+		/// la nouvelle valeur de la fleche a Ã©tÃ© donnÃ©
 
 		color(12);
 		if (fleche == 1){
@@ -194,7 +199,7 @@ void ecrans_help(){
 }
 
 /******************************************************
-*  ecran qui s'affiche quand les vies sont epuisées  *
+*  ecran qui s'affiche quand les vies sont epuisÃ©es  *
 *               renvoi ver le menu                   *
 ******************************************************/
 void game_over(int score){
@@ -255,7 +260,7 @@ void fond_ecran()
 
 /************************************************
 *  affiche un message 'pause', stoppe le jeu   *
-* tant qu'une touche n'est pas tapée et        *
+* tant qu'une touche n'est pas tapÃ©e et        *
 * efface le message                            *
 ************************************************/
 void jeux_pause()
@@ -297,7 +302,12 @@ void game()
 			position++; GotoXY(axe_veseau, position); cout << "<=KE";
 			position++; GotoXY(axe_veseau, position); cout << "  'I";
 			position--; // on retrouve la position initial
-			position += 2; GotoXY(axe_veseau, position); cout << "    "; position -= 2; 			/**************************** 			 **  code des asteroides 1 ** 			 ****************************/	 			if (compteur > 5)
+			position += 2; GotoXY(axe_veseau, position); cout << "    "; position -= 2; 
+			
+			/*************************** 			 
+			**  code des asteroides 1 ** 			 
+			****************************/	 			
+			if (compteur > 5)
 			{
 				if (cycle == 1)			  { axe_asteroide = 10; }
 				else if (cycle == 2)    { axe_asteroide = 16; }
@@ -321,8 +331,8 @@ void game()
 				if (vie == 0){ game_over(score); }
 			}
 
-			/****************************
-			**    code des tirs      **
+			/***************************
+			**     code des tirs      **
 			****************************/
 			color(14);
 			if (v_shoot1 == true) // efface de rayon de tir
@@ -343,7 +353,7 @@ void game()
 				if (axe_asteroide == position_shoot){ compteur = 0; cycle++; score += 10; }
 			}
 
-			/****************************
+			/***************************
 			**  compteur et cycles    **
 			****************************/
 
@@ -360,7 +370,7 @@ void game()
 			if (compteur > 50){ compteur = 0; cycle++; }
 			Sleep(v_sleep);
 
-			/****************************
+			/***************************
 			**   score et resultats   **
 			****************************/
 			color(11);
@@ -434,7 +444,7 @@ void afficher_coeurs(int nb_vie)
 	}
 }
 
-// permet d'afficher a l'écran des informations inutiles pour les
+// permet d'afficher a l'Ã©cran des informations inutiles pour les
 // joueurs mais qui peuvent etre utile pour surveiller le programme
 void afficher_mode_programmeur(int v_sleep, int compteur, int cycle)
 {
