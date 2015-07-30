@@ -1,3 +1,8 @@
+Debug/
+Hello-Invaders.vcxproj
+Hello-Invaders.vcxproj.filters
+
+
 # Compiled Object files
 *.slo
 *.lo
