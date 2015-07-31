@@ -3,11 +3,8 @@
 **          -   Hello Invaders   -          **
 **********************************************
 **                                          **
-**   programmeur   :    julien jacob        **
-**                                          **
-**          site   :    twiy-logic.fr       **
-**                                          **
-**       licence   :    open source         **
+**      Programmer par twiy-logic.fr        **
+**         <julien@twiy-logic.fr>           **
 **                                          **
 **********************************************/
 
@@ -17,11 +14,11 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+#include "ConsoleUtile.h"
 
 using namespace std;
 
-void GotoXY(int x, int y);
-void ClearScreen(void);
+
 void menue();
 void pressentation();
 void ecrans_help();
@@ -29,7 +26,6 @@ void game_over(int score);
 void fond_ecran();
 void jeux_pause();
 void game();
-void color(int f);
 void afficher_coeurs(int nb_vie);
 void afficher_mode_programmeur(int v_sleep, int compteur, int cycle);
 
@@ -46,33 +42,6 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 
 /**************************************
-*  modifier l'emplacement du curseur  *
-***************************************/
-void GotoXY(int x, int y)
-{
-	COORD dwCursorPosition = { x, y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), dwCursorPosition);
-}
-
-/**************************************
-*    efface le texte de la console    *
-***************************************/
-void ClearScreen(void)
-{
-	HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_SCREEN_BUFFER_INFO csbi;
-	if (GetConsoleScreenBufferInfo(hstdout, &csbi))
-	{
-		COORD coordScreen = { 0, 0 };
-		DWORD cCharsWritten;
-		DWORD dwConSize = csbi.dwSize.X * csbi.dwSize.Y;
-		FillConsoleOutputCharacter(hstdout, ' ', dwConSize, coordScreen, &cCharsWritten);
-		FillConsoleOutputAttribute(hstdout, csbi.wAttributes, dwConSize, coordScreen, &cCharsWritten);
-		SetConsoleCursorPosition(hstdout, coordScreen);
-	}
-}
-
-/**************************************
 *         Affiche le menu             *
 ***************************************
 *    - Renvoi vers 'ecran_help'       *
@@ -80,6 +49,7 @@ void ClearScreen(void)
 ***************************************/
 void menue()
 {
+	
 	color(11);
 	cout << endl;
 	cout << "               _____________________________________________              " << endl;
@@ -166,9 +136,8 @@ void pressentation(){
 	cout << "        | |   | |1   | | | / /   / /_| | | | | | |  __|  |  _  /  1___  1 " << endl;
 	cout << "       _| |_  | | 1  | | |/ /   / ,__  | | |_| | | |___  | | 1 1   ___| | " << endl;
 	cout << "      |_____| |_|  1_| |___/   /_/   |_| |_____/ |_____| |_|  1_1 /_____/ " << endl;
-	cout << endl << endl << endl; color(9);
-	cout << "                          Programme par julien jacob       " << endl << endl;
-	cout << "                                 twiy-logic.fr             " << endl << endl << endl;
+	cout << endl << endl << endl << endl; color(9);
+	cout << "                           Programme par twiy-logic.fr     " << endl << endl << endl;
 	cout << "                       Tapez sur une touche pour continuer " << endl;
 	
 	fflush(stdout);
@@ -409,11 +378,7 @@ void game()
 
 } ///fin de la fonction
 
-void color(int f)
-{
-	HANDLE H = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(H, f);
-}
+
 
 void afficher_coeurs(int nb_vie)
 {
