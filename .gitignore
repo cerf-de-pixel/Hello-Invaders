@@ -2,7 +2,9 @@
 Debug/
 Hello-Invaders.vcxproj
 Hello-Invaders.vcxproj.filters
-
+stdafx.cpp
+stdafx.h
+targetver.h
 
 # Compiled Object files
 *.slo
