@@ -2,8 +2,8 @@
 **          -   Hello Invaders   -          **
 **********************************************
 **                                          **
-**      Programmer par twiy-logic.fr        **
-**         <julien@twiy-logic.fr>           **
+**     Programmer par cerf-de-pixel.fr      **
+**        <julien@cerf-de-pixel.fr>         **
 **                                          **
 **********************************************/
 

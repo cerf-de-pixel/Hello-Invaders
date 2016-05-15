@@ -1,10 +1,9 @@
-
 /*********************************************
 **          -   Hello Invaders   -          **
 **********************************************
 **                                          **
-**      Programmer par twiy-logic.fr        **
-**         <julien@twiy-logic.fr>           **
+**      Programmer par cerf-de-pixel.fr     **
+**         <julien@cerf-de-pixel.fr>        **
 **                                          **
 **********************************************/
 
@@ -137,7 +136,7 @@ void pressentation(){
 	cout << "       _| |_  | | 1  | | |/ /   / ,__  | | |_| | | |___  | | 1 1   ___| | " << endl;
 	cout << "      |_____| |_|  1_| |___/   /_/   |_| |_____/ |_____| |_|  1_1 /_____/ " << endl;
 	cout << endl << endl << endl << endl; color(9);
-	cout << "                           Programme par twiy-logic.fr     " << endl << endl << endl;
+	cout << "                           Programme par cerf-de-pixel.fr     " << endl << endl << endl;
 	cout << "                       Tapez sur une touche pour continuer " << endl;
 	
 	fflush(stdout);
@@ -197,7 +196,7 @@ void game_over(int score){
 	cout << "                                1_____/ |___/     |_____| |_|  1_1 " << endl;
 	cout << endl << endl << endl;
 	cout << "                                 SCORE :  " << score << endl << endl << endl;
-	cout << "                                 twiy-logic.fr                 " << endl << endl;
+	cout << "                                 cerf-de-pixel.fr                 " << endl << endl;
 	cout << "                       tapez sur une touche pour continuer		" << endl;
 
 	Sleep(2000);
